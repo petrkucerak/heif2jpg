@@ -11,5 +11,5 @@ do
     
     echo "Converting $file to $jpeg_filename"
     
-    heif-convert "$filename" "$jpeg_filename"
+    heif-convert "$filename" "./output/$jpeg_filename"
 done
