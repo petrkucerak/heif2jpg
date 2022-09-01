@@ -15,4 +15,6 @@ tree
 
 print_header "Run script"
 
-for f in .input/*.heic; do heif-convert -q 100 $f ./output/$f.jpg; done
+cd input
+
+for f in *.heic; do heif-convert -q 100 $f ../output/$f.jpg; done
