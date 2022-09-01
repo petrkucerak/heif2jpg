@@ -24,6 +24,7 @@ jobs:
           print_header "Install dependeces"
           sudo apt install libheif-examples
           print_header "Run script"
+          cd ..
           tree
           
           
