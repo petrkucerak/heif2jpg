@@ -16,9 +16,12 @@ jobs:
     steps:
       - name: Install dependences & build images
         run: |
-          echo Install dependeces
+          print_header() {
+             lightcyan='\033[1;36m'
+             nocolor='\033[0m'
+             echo -e "${lightcyan}$1${nocolor}"
+          }
+          print_header Install dependeces
           sudo apt install libheif-examples
-          echo Run script
-          ls
-          chmod +x ./script.sh
-          ./script.sh ./input/*
+          print_header Run script
+          
