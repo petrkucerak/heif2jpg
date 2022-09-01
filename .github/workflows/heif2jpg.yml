@@ -21,7 +21,9 @@ jobs:
              nocolor='\033[0m'
              echo -e "${lightcyan}$1${nocolor}"
           }
-          print_header Install dependeces
+          print_header "Install dependeces"
           sudo apt install libheif-examples
-          print_header Run script
+          print_header "Run script"
+          tree
+          
           
