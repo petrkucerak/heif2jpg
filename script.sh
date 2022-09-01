@@ -1,15 +1,18 @@
 #!/bin/bash
 
-command -v "heif-convert" >/dev/null 2>&1 || { echo "It requires heif-convert, but it is not installed, or not on the path."; exit 1; }
+print_header() {
+   lightcyan='\033[1;36m'
+   nocolor='\033[0m'
+   echo -e "${lightcyan}$1${nocolor}"
+}
 
-for file in "$@"
-do
-    filename=$(basename "$file")
-    filename_without_extension="${filename%.*}"
-    
-    jpeg_filename="${filename_without_extension}.jpg"
-    
-    echo "Converting $file to $jpeg_filename"
-    
-    heif-convert "$filename" "./output/$jpeg_filename"
-done
+print_header "Install dependeces"
+
+sudo apt install libheif-examples
+
+print_header "Print repo structure"
+tree
+
+print_header "Run script"
+
+for f in .input/*.heic; do heif-convert -q 100 $f ./output/$f.jpg; done
