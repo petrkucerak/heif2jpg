@@ -9,8 +9,8 @@ print_header() {
 print_header "Install dependeces"
 sudo apt install libheif-examples
 
-print_header "Print repo structure"
-tree
+# print_header "Print repo structure"
+# tree
 
 print_header "Run script"
 date=$(date +"%d-%m-%y-%T")
