@@ -20,5 +20,7 @@ cd input
 for f in *.heic; do heif-convert -q 100 $f ../output/$date/$f.jpg; done
 
 print_header "Create zip file"
-cd ../output/$date
+cd ..
+tree
+cd output/$date
 zip output_$date *
